@@ -18,13 +18,13 @@ void unpairedci(int *id, int *nperm, int *n1, int *n0, double *matrix, int *ngen
   double *ex1, *ex0, *ex21, *ex20, *r, *s, *stat;
   int i, j, k;
     
-  ex1=Calloc(*ngene,double);
-  ex0=Calloc(*ngene,double);
-  ex21=Calloc(*ngene,double);
-  ex20=Calloc(*ngene,double);
-  r=Calloc(*ngene,double);
-  s=Calloc(*ngene,double);
-  stat=Calloc(*ngene,double);
+  ex1=calloc(*ngene,sizeof(double));
+  ex0=calloc(*ngene,sizeof(double));
+  ex21=calloc(*ngene,sizeof(double));
+  ex20=calloc(*ngene,sizeof(double));
+  r=calloc(*ngene,sizeof(double));
+  s=calloc(*ngene,sizeof(double));
+  stat=calloc(*ngene,sizeof(double));
 
 
   for (k=0; k<*nperm; k++){
@@ -97,13 +97,13 @@ void unpairedci(int *id, int *nperm, int *n1, int *n0, double *matrix, int *ngen
     
   }
   
-  Free(ex1);
-  Free(ex0);
-  Free(ex21);
-  Free(ex20);
-  Free(r);
-  Free(s);
-  Free(stat);
+  free(ex1);
+  free(ex0);
+  free(ex21);
+  free(ex20);
+  free(r);
+  free(s);
+  free(stat);
 }
 
 
@@ -115,13 +115,13 @@ void pairedci(int *id, int *nperm, int *n1, int *n0, double *matrix, int *ngene,
   double *g1, *g0, *diff;
   int i, j, k1, k0, k;
 
-  g1=Calloc(*n1,double);
-  g0=Calloc(*n1,double);
-  diff=Calloc(*n1,double);
-  r=Calloc(*ngene,double);
-  s=Calloc(*ngene,double);
-  ex2=Calloc(*ngene,double);
-  stat=Calloc(*ngene,double);
+  g1=calloc(*n1,sizeof(double));
+  g0=calloc(*n1,sizeof(double));
+  diff=calloc(*n1,sizeof(double));
+  r=calloc(*ngene,sizeof(double));
+  s=calloc(*ngene,sizeof(double));
+  ex2=calloc(*ngene,sizeof(double));
+  stat=calloc(*ngene,sizeof(double));
 
   for (k=0; k<*nperm; k++){
 
@@ -218,12 +218,12 @@ void pairedci(int *id, int *nperm, int *n1, int *n0, double *matrix, int *ngene,
     
   }
 
-  Free(g1);
-  Free(g0);
-  Free(diff);
-  Free(r);
-  Free(s);
-  Free(ex2);
-  Free(stat);
+  free(g1);
+  free(g0);
+  free(diff);
+  free(r);
+  free(s);
+  free(ex2);
+  free(stat);
 }
 

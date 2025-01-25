@@ -1,7 +1,7 @@
 Package: twilight
-Version: 1.69.1
+Version: 1.69.2
 Title: Estimation of local false discovery rate
-Author: Stefanie Scheid <stefanie.scheid@gmx.de>
+Author: Stefanie Scheid (Stefanie Senger) <stefanie.scheid@gmx.de>
 Description: In a typical microarray setting with gene expression data
         observed under two conditions, the local false discovery rate
         describes the probability that a gene is not differentially
@@ -19,7 +19,7 @@ Description: In a typical microarray setting with gene expression data
         permutations that describe the null distribution correctly.
         Using filtered permutations, the influence of hidden
         confounders could be diminished.
-Maintainer: Stefanie Scheid <stefanie.scheid@gmx.de>
+Maintainer: Stefanie Scheid (Stefanie Senger) <stefanie.scheid@gmx.de>
 Depends: R (>= 2.10), splines (>= 2.2.0), stats (>= 2.2.0), Biobase(>=
         1.12.0)
 Imports: Biobase, graphics, grDevices, stats
