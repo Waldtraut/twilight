@@ -20,7 +20,7 @@ Description: In a typical microarray setting with gene expression data
         Using filtered permutations, the influence of hidden
         confounders could be diminished.
 Maintainer: Stefanie Scheid (Stefanie Senger) <stefanie.scheid@gmx.de>
-Depends: R (>= 2.10), stats (>= 2.2.0), Biobase(>= 1.12.0)
+Depends: R (>= 2.10), stats (>= 2.2.0), Biobase (>= 1.12.0)
 Imports: graphics, grDevices, splines (>= 2.2.0)
 Suggests: golubEsets (>= 1.4.2), vsn (>= 1.7.2)
 License: GPL (>= 2)
