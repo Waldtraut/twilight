@@ -19,16 +19,16 @@ void unpairedperm(int *id, int *nperm, int *n1, int *n0, double *matrix, int *ng
   double *ex1, *ex0, *ex21, *ex20, *r, *s, *stat, *dstat;
   int i, j, k, *test, *indx;
 
-  ex1=Calloc(*ngene,double);
-  ex0=Calloc(*ngene,double);
-  ex21=Calloc(*ngene,double);
-  ex20=Calloc(*ngene,double);
-  r=Calloc(*ngene,double);
-  s=Calloc(*ngene,double);
-  stat=Calloc(*ngene,double);
-  test=Calloc(1,int);
-  indx=Calloc((*nperm)*(*ngene),int);
-  dstat=Calloc((*nperm)*(*ngene),double);
+  ex1=calloc(*ngene,sizeof(double));
+  ex0=calloc(*ngene,sizeof(double));
+  ex21=calloc(*ngene,sizeof(double));
+  ex20=calloc(*ngene,sizeof(double));
+  r=calloc(*ngene,sizeof(double));
+  s=calloc(*ngene,sizeof(double));
+  stat=calloc(*ngene,sizeof(double));
+  test=calloc(1,sizeof(int));
+  indx=calloc((*nperm)*(*ngene),sizeof(int));
+  dstat=calloc((*nperm)*(*ngene),sizeof(double));
 
   for (k=0; k<*nperm; k++){
 
@@ -124,16 +124,16 @@ void unpairedperm(int *id, int *nperm, int *n1, int *n0, double *matrix, int *ng
     f[j]=f[j]/((*nperm)*(*ngene));
   }
   
-  Free(ex1);
-  Free(ex0);
-  Free(ex21);
-  Free(ex20);
-  Free(r);
-  Free(s);
-  Free(stat);
-  Free(test);
-  Free(dstat);
-  Free(indx);
+  free(ex1);
+  free(ex0);
+  free(ex21);
+  free(ex20);
+  free(r);
+  free(s);
+  free(stat);
+  free(test);
+  free(dstat);
+  free(indx);
 }
 
 
@@ -145,13 +145,13 @@ void pairedperm(int *id, int *nperm, int *n1, int *n0, double *matrix, int *ngen
   double *diff;
   int i, j, k, *indx;
 
-  diff=Calloc(*n1,double);
-  r=Calloc(*ngene,double);
-  s=Calloc(*ngene,double);
-  ex2=Calloc(*ngene,double);
-  stat=Calloc(*ngene,double);
-  indx=Calloc((*nperm)*(*ngene),int);
-  dstat=Calloc((*nperm)*(*ngene),double);
+  diff=calloc(*n1,sizeof(double));
+  r=calloc(*ngene,sizeof(double));
+  s=calloc(*ngene,sizeof(double));
+  ex2=calloc(*ngene,sizeof(double));
+  stat=calloc(*ngene,sizeof(double));
+  indx=calloc((*nperm)*(*ngene),sizeof(int));
+  dstat=calloc((*nperm)*(*ngene),sizeof(double));
 
 
   for (k=0; k<*nperm; k++){
@@ -237,12 +237,12 @@ void pairedperm(int *id, int *nperm, int *n1, int *n0, double *matrix, int *ngen
     f[j]=f[j]/((*nperm)*(*ngene));
   }
 
-  Free(diff);
-  Free(r);
-  Free(s);
-  Free(ex2);
-  Free(stat);
-  Free(dstat);
-  Free(indx);
+  free(diff);
+  free(r);
+  free(s);
+  free(ex2);
+  free(stat);
+  free(dstat);
+  free(indx);
 }
 

@@ -19,13 +19,13 @@ void unpaired(int *id, int *n1, int *n0, double *matrix, int *ngene, int *nsampl
   double *ex1, *ex0, *ex21, *ex20, *r, *s, *ssort;
   int i, j;
 
-  ex1=Calloc(*ngene,double);
-  ex0=Calloc(*ngene,double);
-  ex21=Calloc(*ngene,double);
-  ex20=Calloc(*ngene,double);
-  r=Calloc(*ngene,double);
-  s=Calloc(*ngene,double);
-  ssort=Calloc(*ngene,double);
+  ex1=calloc(*ngene,sizeof(double));
+  ex0=calloc(*ngene,sizeof(double));
+  ex21=calloc(*ngene,sizeof(double));
+  ex20=calloc(*ngene,sizeof(double));
+  r=calloc(*ngene,sizeof(double));
+  s=calloc(*ngene,sizeof(double));
+  ssort=calloc(*ngene,sizeof(double));
   
 
   /* compute first and second moment to calculate mean and variance */
@@ -89,13 +89,13 @@ void unpaired(int *id, int *n1, int *n0, double *matrix, int *ngene, int *nsampl
   
   fudge[0]=*s0;
 
-  Free(ex1);
-  Free(ex0);
-  Free(ex21);
-  Free(ex20);
-  Free(r);
-  Free(s);
-  Free(ssort);
+  free(ex1);
+  free(ex0);
+  free(ex21);
+  free(ex20);
+  free(r);
+  free(s);
+  free(ssort);
 }
 
 
@@ -107,11 +107,11 @@ void paired(int *id, int *n1, int *n0, double *matrix, int *ngene, int *nsample,
   double *diff;
   int i, j;
 
-  diff=Calloc(*n1,double);
-  r=Calloc(*ngene,double);
-  s=Calloc(*ngene,double);
-  ssort=Calloc(*ngene,double);
-  ex2=Calloc(*ngene,double);
+  diff=calloc(*n1,sizeof(double));
+  r=calloc(*ngene,sizeof(double));
+  s=calloc(*ngene,sizeof(double));
+  ssort=calloc(*ngene,sizeof(double));
+  ex2=calloc(*ngene,sizeof(double));
 
   for (j=0; j<*ngene; j++){
     
@@ -166,9 +166,9 @@ void paired(int *id, int *n1, int *n0, double *matrix, int *ngene, int *nsample,
 
   fudge[0]=*s0;
 
-  Free(diff);
-  Free(r);
-  Free(s);
-  Free(ssort);
-  Free(ex2);
+  free(diff);
+  free(r);
+  free(s);
+  free(ssort);
+  free(ex2);
 }

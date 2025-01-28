@@ -22,7 +22,7 @@ int* indexx(int n, double *a)
   int *indx;
   int i;
 
-  indx=Calloc(n, int);
+  indx=calloc(n,sizeof(int));
 
   for (i=0; i<n; i++){
     a[i]=fabs(a[i]);
@@ -52,10 +52,10 @@ double* kolmogoroff(double *a, int nrowa, int ncola)
   double *eout;
 
 
-  b=Calloc(1, double);
-  asort=Calloc(nrowa, double);
-  pval=Calloc(n, double);
-  eout=Calloc(ncola, double);
+  b=calloc(1,sizeof(double));
+  asort=calloc(nrowa,sizeof(double));
+  pval=calloc(n,sizeof(double));
+  eout=calloc(ncola,sizeof(double));
 
   indx=indexx(n,a);
 
@@ -84,10 +84,10 @@ double* kolmogoroff(double *a, int nrowa, int ncola)
     }    
   }
 
-  Free(b); 
-  Free(asort);  
-  Free(pval);  
-  Free(indx);  
+  free(b); 
+  free(asort);  
+  free(pval);  
+  free(indx);  
 
   return eout;
 
@@ -103,16 +103,16 @@ void unpairedKSTEST(int *id, int *nperm, int *n1, int *n0, double *matrix, int *
   int i, j, k, *test;
   int nrowa=*ngene, ncola=*nperm;
 
-  ex1=Calloc(*ngene,double);
-  ex0=Calloc(*ngene,double);
-  ex21=Calloc(*ngene,double);
-  ex20=Calloc(*ngene,double);
-  r=Calloc(*ngene,double);
-  s=Calloc(*ngene,double);
-  ssort=Calloc(*ngene,double);
-  stat=Calloc(*ngene,double);
-  statall=Calloc((*ngene)*(*nperm),double);
-  test=Calloc(1,int);
+  ex1=calloc(*ngene,sizeof(double));
+  ex0=calloc(*ngene,sizeof(double));
+  ex21=calloc(*ngene,sizeof(double));
+  ex20=calloc(*ngene,sizeof(double));
+  r=calloc(*ngene,sizeof(double));
+  s=calloc(*ngene,sizeof(double));
+  ssort=calloc(*ngene,sizeof(double));
+  stat=calloc(*ngene,sizeof(double));
+  statall=calloc((*ngene)*(*nperm),sizeof(double));
+  test=calloc(1,sizeof(int));
 
 
   for (k=0; k<*nperm; k++){
@@ -207,17 +207,17 @@ void unpairedKSTEST(int *id, int *nperm, int *n1, int *n0, double *matrix, int *
     f[k]=e[k];
   }
 
-  Free(ex1);
-  Free(ex0);
-  Free(ex21);
-  Free(ex20);
-  Free(r);
-  Free(s);
-  Free(ssort);
-  Free(stat);
-  Free(statall);
-  Free(test);
-  Free(e);
+  free(ex1);
+  free(ex0);
+  free(ex21);
+  free(ex20);
+  free(r);
+  free(s);
+  free(ssort);
+  free(stat);
+  free(statall);
+  free(test);
+  free(e);
 }
 
 
@@ -230,13 +230,13 @@ void pairedKSTEST(int *id, int *nperm, int *n1, int *n0, double *matrix, int *ng
   int i, j, k;
   int nrowa=*ngene, ncola=*nperm;
 
-  diff=Calloc(*n1,double);
-  r=Calloc(*ngene,double);
-  s=Calloc(*ngene,double);
-  ssort=Calloc(*ngene,double);
-  ex2=Calloc(*ngene,double);
-  stat=Calloc(*ngene,double);
-  statall=Calloc((*ngene)*(*nperm),double);
+  diff=calloc(*n1,sizeof(double));
+  r=calloc(*ngene,sizeof(double));
+  s=calloc(*ngene,sizeof(double));
+  ssort=calloc(*ngene,sizeof(double));
+  ex2=calloc(*ngene,sizeof(double));
+  stat=calloc(*ngene,sizeof(double));
+  statall=calloc((*ngene)*(*nperm),sizeof(double));
 
 
   for (k=0; k<*nperm; k++){
@@ -321,14 +321,14 @@ void pairedKSTEST(int *id, int *nperm, int *n1, int *n0, double *matrix, int *ng
   }
   
 
-  Free(diff);
-  Free(r);
-  Free(s);
-  Free(ssort);
-  Free(ex2);
-  Free(stat);
-  Free(statall);
-  Free(e);
+  free(diff);
+  free(r);
+  free(s);
+  free(ssort);
+  free(ex2);
+  free(stat);
+  free(statall);
+  free(e);
 }
 
 
@@ -342,13 +342,13 @@ void correlationKSTEST(double *vecperm, int *nperm, double *matrix, int *ngene, 
   int i, j, k;
   int nrowa=*ngene, ncola=*nperm;
 
-  ex0=Calloc(1,double);
-  ex1=Calloc(*ngene,double);
-  ex20=Calloc(1,double);
-  ex21=Calloc(*ngene,double);
-  exboth=Calloc(*ngene,double);
-  stat=Calloc(*ngene,double);
-  statall=Calloc((*ngene)*(*nperm),double);
+  ex0=calloc(1,sizeof(double));
+  ex1=calloc(*ngene,sizeof(double));
+  ex20=calloc(1,sizeof(double));
+  ex21=calloc(*ngene,sizeof(double));
+  exboth=calloc(*ngene,sizeof(double));
+  stat=calloc(*ngene,sizeof(double));
+  statall=calloc((*ngene)*(*nperm),sizeof(double));
 
 
   for (k=0; k<*nperm; k++){
@@ -394,12 +394,12 @@ void correlationKSTEST(double *vecperm, int *nperm, double *matrix, int *ngene, 
   }
 
     
-  Free(ex0);
-  Free(ex1);
-  Free(ex20);
-  Free(ex21);
-  Free(exboth);
-  Free(stat);
-  Free(statall);
-  Free(e);
+  free(ex0);
+  free(ex1);
+  free(ex20);
+  free(ex21);
+  free(exboth);
+  free(stat);
+  free(statall);
+  free(e);
 }

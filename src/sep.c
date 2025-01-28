@@ -13,7 +13,7 @@ double empirical(double *a, int na)
   double *b;
   double e;
 
-  b=Calloc(1, double);
+  b=calloc(1,sizeof(double));
 
   e=0;
 
@@ -28,7 +28,7 @@ double empirical(double *a, int na)
 
   }
 
-  Free(b);
+  free(b);
 
   return e;
 }
@@ -47,8 +47,8 @@ void sep(double *xin, int *nxin, double *lambda, int *xout, double *funout)
   double *yin;
   double *objfunc;
 
-  ix=Calloc((*nxin), int);
-  objfunc=Calloc(2, double);
+  ix=calloc((*nxin),sizeof(int));
+  objfunc=calloc(2,sizeof(double));
 
   for (i=0; i<*nxin; i++){ 
     ix[i]=1; 
@@ -75,7 +75,7 @@ void sep(double *xin, int *nxin, double *lambda, int *xout, double *funout)
 	    } 
 	  }
 	  
-	  yin=Calloc(nyin, double);
+	  yin=calloc(nyin,sizeof(double));
 	  
 	  for (i=0; i<*nxin; i++){ 
 	    if (ix[i]==1){
@@ -100,7 +100,7 @@ void sep(double *xin, int *nxin, double *lambda, int *xout, double *funout)
 	  
 	  nyin=0;
 	  j=0;
-	  Free(yin);
+	  free(yin);
 	}
     }
 
@@ -121,7 +121,7 @@ void sep(double *xin, int *nxin, double *lambda, int *xout, double *funout)
 	} 
       }
       
-      yin=Calloc(nyin, double);
+      yin=calloc(nyin,sizeof(double));
       
       for (i=0; i<*nxin; i++){ 
 	if (ix[i]==1){
@@ -146,7 +146,7 @@ void sep(double *xin, int *nxin, double *lambda, int *xout, double *funout)
       
       nyin=0;
       j=0;
-      Free(yin);
+      free(yin);
     } 
   
   
@@ -156,7 +156,7 @@ void sep(double *xin, int *nxin, double *lambda, int *xout, double *funout)
     }
   
   
-  Free(ix);
-  Free(objfunc);
+  free(ix);
+  free(objfunc);
  
 }
