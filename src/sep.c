@@ -67,7 +67,7 @@ void sep(double *xin, int *nxin, double *lambda, int *xout, double *funout)
 	{
 	  randnum=(int)( ((double) *nxin)*rand()/(RAND_MAX+1.0) );
 	  
-	  ix[randnum]=fabs(1-ix[randnum]);
+	  ix[randnum]=abs(1-ix[randnum]);
 	  
 	  for (i=0; i<*nxin; i++){ 
 	    if (ix[i]==1){
@@ -94,7 +94,7 @@ void sep(double *xin, int *nxin, double *lambda, int *xout, double *funout)
 	    }
 	  else
 	    {
-	      ix[randnum]=fabs(1-ix[randnum]);
+	      ix[randnum]=abs(1-ix[randnum]);
 	      count++;
 	    }
 	  
@@ -113,7 +113,7 @@ void sep(double *xin, int *nxin, double *lambda, int *xout, double *funout)
     {
       randnum=(int)( ((double) *nxin)*rand()/(RAND_MAX+1.0) );
       
-      ix[randnum]=fabs(1-ix[randnum]);
+      ix[randnum]=abs(1-ix[randnum]);
       
       for (i=0; i<*nxin; i++){ 
 	if (ix[i]==1){
@@ -140,7 +140,7 @@ void sep(double *xin, int *nxin, double *lambda, int *xout, double *funout)
 	}
       else
 	{
-	  ix[randnum]=fabs(1-ix[randnum]);
+	  ix[randnum]=abs(1-ix[randnum]);
 	  count++;
 	}
       

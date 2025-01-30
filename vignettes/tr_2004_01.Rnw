@@ -47,7 +47,6 @@
 q(save="no")
 
 <<echo=FALSE,results=hide>>=
-library(splines)
 library(stats)
 library(golubEsets)
 library(vsn)
