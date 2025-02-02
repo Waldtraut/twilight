@@ -1,7 +1,8 @@
 Package: twilight
-Version: 1.83.3
+Version: 1.83.4
 Title: Estimation of local false discovery rate
-Author: Stefanie Senger <stefanie.scheid 'at' gmx.de>
+Authors@R: person("Stefanie","Senger",email=stefanie.scheid@gmx.de,
+  role=c("cre","aut"),comment=c(ORCID="0000-0003-4144-1040"))
 Description: In a typical microarray setting with gene expression data
         observed under two conditions, the local false discovery rate
         describes the probability that a gene is not differentially
@@ -19,10 +20,8 @@ Description: In a typical microarray setting with gene expression data
         permutations that describe the null distribution correctly.
         Using filtered permutations, the influence of hidden
         confounders could be diminished.
-Maintainer: Stefanie Senger <stefanie.scheid 'at' gmx.de>
-Depends: R (>= 2.10), stats (>= 2.2.0), Biobase(>= 1.12.0)
-Imports: graphics, grDevices
-Suggests: golubEsets (>= 1.4.2), vsn (>= 1.7.2)
+Imports: stats, Biobase, graphics, grDevices
+Suggests: golubEsets, vsn
 License: GPL (>= 2)
 URL: http://compdiag.molgen.mpg.de/software/twilight.shtml
 biocViews: Microarray, DifferentialExpression, MultipleComparison
