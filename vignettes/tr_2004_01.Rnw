@@ -48,6 +48,7 @@ q(save="no")
 
 <<echo=FALSE,results=hide>>=
 library(stats)
+library(splines)
 library(golubEsets)
 library(vsn)
 oldopt <- options(digits=3)
