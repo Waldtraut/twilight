@@ -1,5 +1,5 @@
 Package: twilight
-Version: 1.83.6
+Version: 1.83.7
 Title: Estimation of local false discovery rate
 Authors@R: person(given="Stefanie",family="Senger",
   email="stefanie.scheid@gmx.de",role=c("cre","aut"),

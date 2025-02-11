@@ -6,7 +6,7 @@ importFrom(graphics, axis, hist, lines, par, plot, points, rug)
 importFrom(grDevices, gray)
 importFrom(stats, lm, predict, quantile, runif, smooth.spline,
            wilcox.test)
-importFrom(splines, ns, predict)
+importFrom(splines, ns, predict.bs)
 
 export(plot.twilight, print.twilight, twilight, twilight.combi,
        twilight.filtering, twilight.getlambda, twilight.getmatrix,
